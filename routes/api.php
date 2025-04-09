@@ -14,8 +14,10 @@ use App\Http\Controllers\AuthController;
 |
 */
 Route::post('register', [AuthController::class, 'register']);
-Route::post('verify-contact', [AuthController::class, 'verifyContact']);
-Route::post('login', [AuthController::class, 'login']);
+Route::post('login_action', [AuthController::class, 'loginAction']);
+Route::post('compare_nickname', [AuthController::class, 'compareNickname']);
+Route::post('login_with_password', [AuthController::class, 'loginWithPassword']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     Route::post('logout', [AuthApiController::class, 'logout']);
